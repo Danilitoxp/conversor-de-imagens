@@ -1,0 +1,137 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#henrique {
+    margin: 10px;
+    animation: pulse 1s infinite alternate;
+}
+
+#dropArea {
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+#dropArea .upload-indicator {
+    transition: opacity 0.3s;
+}
+
+#dropArea .material-icons {
+    font-size: 48px;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+#dropArea p {
+    margin: 10px 0 0;
+    color: #555;
+    font-size: 1em;
+}
+
+#dropArea.dragging {
+    background-color: #e2e6ea;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#dropArea.dragging .material-icons {
+    color: #0056b3;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.loading, .success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #007bff;
+    font-size: 1.2em;
+    margin-top: 10px;
+    transition: opacity 0.3s;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.success {
+    color: green;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#downloadLink {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: pulse 1s infinite alternate;
+}
+
+#downloadLink:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}

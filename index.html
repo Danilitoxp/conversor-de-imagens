@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Imagens Henrique</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="henrique.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <img id="henrique" src="/henrique.png" width="200px" style="margin: 10px;" alt="Imagem Henrique">
+        <div id="dropArea">
+            <div class="upload-indicator">
+                <span class="material-icons">cloud_upload</span>
+                <p>Arraste e solte sua imagem aqui</p>
+            </div>
+            <div class="loading" style="display: none;">
+                <span class="material-icons spin">autorenew</span>
+                <p>Processando...</p>
+            </div>
+            <div class="success" style="display: none;">
+                <span class="material-icons">check_circle</span>
+                <p>Arquivo Pronto!</p>
+            </div>
+        </div>
+        <div id="result">
+            <a id="downloadLink" style="display: none;">
+                <span class="material-icons">download</span> Baixar Imagem Convertida
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
