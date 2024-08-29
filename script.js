@@ -1,4 +1,5 @@
 const dropArea = document.getElementById('dropArea');
+const fileInput = document.getElementById('fileInput');
 const downloadLink = document.getElementById('downloadLink');
 const loadingIndicator = document.querySelector('.loading');
 const successIndicator = document.querySelector('.success');
@@ -25,6 +26,17 @@ function preventDefaults(e) {
 
 // Lida com o evento de soltar
 dropArea.addEventListener('drop', handleDrop, false);
+
+// Lida com o evento de clique para seleção de arquivo
+dropArea.addEventListener('click', () => fileInput.click(), false);
+
+// Lida com o evento de seleção de arquivo
+fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (file) {
+        handleFile(file);
+    }
+});
 
 function handleDrop(e) {
     const dt = e.dataTransfer;
@@ -60,9 +72,9 @@ function handleFile(file) {
             const dataURL = canvas.toDataURL('image/jpeg');
 
             downloadLink.href = dataURL;
-            downloadLink.download = 'converted-image.jpg';
+            downloadLink.download = 'imagem-convertida.jpg';
             downloadLink.style.display = 'inline-flex'; // Mostra o botão de download
-            downloadLink.textContent = 'Download Converted Image';
+            downloadLink.textContent = 'Baixar Imagem Convertida';
 
             loadingIndicator.style.display = 'none'; // Esconde o indicador de carregamento
             successIndicator.style.display = 'flex'; // Mostra o ícone de sucesso
@@ -72,7 +84,7 @@ function handleFile(file) {
             // Trata erros ao carregar a imagem
             loadingIndicator.style.display = 'none';
             uploadIndicator.style.display = 'flex';
-            alert('Failed to load the image.');
+            alert('Falha ao carregar a imagem.');
         };
     };
 
@@ -80,6 +92,6 @@ function handleFile(file) {
         // Trata erros ao ler o arquivo
         loadingIndicator.style.display = 'none';
         uploadIndicator.style.display = 'flex';
-        alert('Failed to read the file.');
+        alert('Falha ao ler o arquivo.');
     };
 }

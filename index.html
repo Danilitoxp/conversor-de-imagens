@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Imagens Henrique</title>
+    <title>Conversor de Imagens</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="henrique.png" type="image/x-icon">
@@ -14,8 +14,9 @@
         <div id="dropArea">
             <div class="upload-indicator">
                 <span class="material-icons">cloud_upload</span>
-                <p>Arraste e solte sua imagem aqui</p>
+                <p>Arraste e solte sua imagem aqui ou clique para selecionar</p>
             </div>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
             <div class="loading" style="display: none;">
                 <span class="material-icons spin">autorenew</span>
                 <p>Processando...</p>
